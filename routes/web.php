@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,3 +47,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+// ******** ADMIN PANEL ROUTES *************
+Route::get("/admin",[AdminHomeController::class,"index"])->name("admin");
+
