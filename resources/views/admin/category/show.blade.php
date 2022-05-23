@@ -15,8 +15,8 @@
                     <div class="col-md-12">
                         <div class="content-panel">
                             <div style="margin-left: 12px">
-                                <a href="/admin/category/edit/{{$data->id}}" class="btn btn-primary">Edit</a>
-                                <a href="/admin/category/destroy/{{$data->id}}" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
+                                <a href="{{route('admin.category.edit',['id'=>$data->id])}}" class="btn btn-primary">Edit</a>
+                                <a href="{{route('admin.category.destroy',['id'=>$data->id])}}" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
                             </div>
                             <hr>
                             <table class="table table-striped table-responsive-lg">

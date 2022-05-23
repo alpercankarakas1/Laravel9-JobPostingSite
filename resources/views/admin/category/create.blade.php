@@ -14,7 +14,7 @@
                 <div class="col-lg-12">
                     <div class="form-panel">
                         <h4 class="mb"><i class="fa fa-angle-right"></i> Category Elements</h4>
-                        <form class="form-horizontal style-form" action="/admin/category/store" method="post">
+                        <form class="form-horizontal style-form" action="{{route('admin.category.store')}}" method="post">
                             @csrf
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Title</label>
