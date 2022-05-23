@@ -8,11 +8,11 @@
         <ul class="sidebar-menu" id="nav-accordion">
 
             <p class="centered"><a href="profile.html"><img src="{{asset('assets')}}/admin/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-            <h5 class="centered">Marcel Newman</h5>
+            <h5 class="centered">usernamesurname</h5>
 
-            <li class="mt">
-                <a href="index.html">
-                    <i class="fa fa-dashboard"></i>
+            <li class="mt-5">
+                <a href="/admin">
+                    <i class="fa fa-home"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
@@ -20,7 +20,7 @@
             <li class="sub-menu">
                 <a href="javascript:;" >
                     <i class="fa fa-desktop"></i>
-                    <span>UI Elements</span>
+                    <span>Application</span>
                 </a>
                 <ul class="sub">
                     <li><a  href="general.html">General</a></li>
@@ -29,57 +29,63 @@
                 </ul>
             </li>
 
-            <li class="sub-menu">
-                <a href="javascript:;" >
-                    <i class="fa fa-cogs"></i>
-                    <span>Components</span>
-                </a>
-                <ul class="sub">
-                    <li><a  href="calendar.html">Calendar</a></li>
-                    <li><a  href="gallery.html">Gallery</a></li>
-                    <li><a  href="todo_list.html">Todo List</a></li>
-                </ul>
-            </li>
-            <li class="sub-menu">
-                <a class="active" href="javascript:;" >
-                    <i class="fa fa-book"></i>
-                    <span>Extra Pages</span>
-                </a>
-                <ul class="sub">
-                    <li class="active"><a  href="blank.html">Blank Page</a></li>
-                    <li><a  href="login.html">Login</a></li>
-                    <li><a  href="lock_screen.html">Lock Screen</a></li>
-                </ul>
-            </li>
-            <li class="sub-menu">
-                <a href="javascript:;" >
-                    <i class="fa fa-tasks"></i>
-                    <span>Forms</span>
-                </a>
-                <ul class="sub">
-                    <li><a  href="form_component.html">Form Components</a></li>
-                </ul>
-            </li>
-            <li class="sub-menu">
-                <a href="javascript:;" >
+            <li class="mt-5">
+                <a href="/admin/category">
                     <i class="fa fa-th"></i>
-                    <span>Data Tables</span>
+                    <span>Categories</span>
                 </a>
-                <ul class="sub">
-                    <li><a  href="basic_table.html">Basic Table</a></li>
-                    <li><a  href="responsive_table.html">Responsive Table</a></li>
-                </ul>
             </li>
-            <li class="sub-menu">
-                <a href="javascript:;" >
-                    <i class=" fa fa-bar-chart-o"></i>
-                    <span>Charts</span>
+
+            <li class="mt-5">
+                <a href="index.html">
+                    <i class="fa fa-book"></i>
+                    <span>Jobs</span>
                 </a>
-                <ul class="sub">
-                    <li><a  href="morris.html">Morris</a></li>
-                    <li><a  href="chartjs.html">Chartjs</a></li>
-                </ul>
             </li>
+
+            <li class="mt-5">
+                <a href="index.html">
+                    <i class="fa fa-users"></i>
+                    <span>Users</span>
+                </a>
+            </li>
+
+            <li class="mt-5">
+                <a href="index.html">
+                    <i class="fa fa-comment"></i>
+                    <span>Messages</span>
+                </a>
+            </li>
+
+            <li class="mt-5">
+                <a href="index.html">
+                    <i class="fa fa-comments"></i>
+                    <span>Comments</span>
+                </a>
+            </li>
+
+            <li class="mt-5">
+                <a href="index.html">
+                    <i class="fa fa-tag"></i>
+                    <span>Social</span>
+                </a>
+            </li>
+
+            <li class="mt-5">
+                <a href="index.html">
+                    <i class="fa fa-question"></i>
+                    <span>FAQ</span>
+                </a>
+            </li>
+
+            <li class="mt-5">
+                <a href="/admin/category">
+                    <i class="fa fa-cogs"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+
+
 
         </ul>
         <!-- sidebar menu end-->

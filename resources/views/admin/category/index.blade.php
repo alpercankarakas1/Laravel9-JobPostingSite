@@ -9,12 +9,11 @@
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper site-min-height">
-            <h3><i class="fa fa-angle-right"></i> Category List</h3>
+            <a href="/admin/category/create" class="btn btn-primary btn-lg" style="margin-top: 12px">Add Category</a>
             <div class="row mt">
                 <div class="col-md-12">
                     <div class="content-panel">
-                        <h4><i class="fa fa-angle-right"></i> Category List</h4><hr><table class="table table-bordered table-responsive table-striped">
-
+                        <h4><i class="fa fa-angle-right"></i> Categories</h4><hr><table class="table table-bordered table-responsive table-striped">
 
                             <thead>
                             <tr>
