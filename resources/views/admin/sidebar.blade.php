@@ -19,7 +19,7 @@
 
             <li class="sub-menu">
                 <a href="javascript:;" >
-                    <i class="fa fa-desktop"></i>
+                    <i class="fa fa-clipboard"></i>
                     <span>Application</span>
                 </a>
                 <ul class="sub">
@@ -37,49 +37,49 @@
             </li>
 
             <li class="mt-5">
-                <a href="index.html">
+                <a href="/admin/job">
                     <i class="fa fa-book"></i>
                     <span>Jobs</span>
                 </a>
             </li>
 
             <li class="mt-5">
-                <a href="index.html">
+                <a href="/admin/user">
                     <i class="fa fa-users"></i>
                     <span>Users</span>
                 </a>
             </li>
 
             <li class="mt-5">
-                <a href="index.html">
+                <a href="/admin/message">
                     <i class="fa fa-comment"></i>
                     <span>Messages</span>
                 </a>
             </li>
 
             <li class="mt-5">
-                <a href="index.html">
+                <a href="/admin/comment">
                     <i class="fa fa-comments"></i>
                     <span>Comments</span>
                 </a>
             </li>
 
             <li class="mt-5">
-                <a href="index.html">
+                <a href="/admin/social">
                     <i class="fa fa-tag"></i>
                     <span>Social</span>
                 </a>
             </li>
 
             <li class="mt-5">
-                <a href="index.html">
+                <a href="/admin/faq">
                     <i class="fa fa-question"></i>
                     <span>FAQ</span>
                 </a>
             </li>
 
             <li class="mt-5">
-                <a href="/admin/category">
+                <a href="/admin/settings">
                     <i class="fa fa-cogs"></i>
                     <span>Settings</span>
                 </a>
