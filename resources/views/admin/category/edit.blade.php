@@ -14,7 +14,7 @@
                 <div class="col-lg-12">
                     <div class="form-panel">
                         <h4 class="mb"><i class="fa fa-angle-right"></i> Category Elements</h4>
-                        <form class="form-horizontal style-form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post">
+                        <form class="form-horizontal style-form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Title</label>
@@ -48,7 +48,7 @@
                                 <label class="col-sm-2 col-sm-2 control-label">Status</label>
                                 <div class="col-sm-10">
                                 <select class="form-control" name="status">
-                                    <option disabled selected value>-- select an option --</option>
+                                    <option disabled>-- select an option --</option>
                                     <option>True</option>
                                     <option>False</option>
                                 </select>
