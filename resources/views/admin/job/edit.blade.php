@@ -1,7 +1,9 @@
 @extends('layouts.adminbase')
 
 @section('title', 'Edit Job')
-
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+@endsection
 @section('content')
     <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
@@ -88,9 +90,19 @@
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Detail</label>
                                 <div class="col-sm-10">
-                                    <textarea class="col-sm-2 col-sm-2 control-label" name="detail">
-                                        {{$data->detail}}
+                                    <textarea class="col-sm-2 col-sm-2 control-label" id="detail" name="detail">
+                                        {!! $data->detail !!}
                                     </textarea>
+                                    <script>
+                                        ClassicEditor
+                                            .create( document.querySelector( '#detail' ) )
+                                            .then( editor => {
+                                                console.log( editor );
+                                            } )
+                                            .catch( error => {
+                                                console.error( error );
+                                            } );
+                                    </script>
                                 </div>
                             </div>
 
