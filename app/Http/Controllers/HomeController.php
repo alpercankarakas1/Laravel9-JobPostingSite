@@ -11,11 +11,14 @@ class HomeController extends Controller
     public function index(){
 
         $sliderdata = Job::limit(4)->get();
+        $homejoblisting = Job::limit(6)->get();
 
         return view('home.index',[
-            'sliderdata' => $sliderdata
+            'sliderdata' => $sliderdata,
+            'homejoblisting' => $homejoblisting
         ]);
     }
+
 
     public function test(){
         return view('home.test');
