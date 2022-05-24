@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPanel\AdminJobController;
+use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
@@ -55,6 +56,7 @@ Route::prefix('admin')->name('admin.')->group(function (){
     Route::get('/',[AdminHomeController::class,'index'])->name('index');
 
 // ******** ADMIN CATEGORY ROUTES *************
+
     Route::prefix('/category')->controller(AdminCategoryController::class)->name('category.')->group(function (){
         Route::get("/","index")->name("index");
         Route::get("/create","create")->name("create");
@@ -65,6 +67,7 @@ Route::prefix('admin')->name('admin.')->group(function (){
         Route::get("/destroy/{id}","destroy")->name("destroy");
     });
 // ******** ADMIN JOB ROUTES *************
+
     Route::prefix('/job')->controller(AdminJobController::class)->name('job.')->group(function (){
         Route::get("/","index")->name("index");
         Route::get("/create","create")->name("create");
@@ -73,6 +76,13 @@ Route::prefix('admin')->name('admin.')->group(function (){
         Route::post("/update/{id}","update")->name("update");
         Route::get("/show/{id}","show")->name("show");
         Route::get("/destroy/{id}","destroy")->name("destroy");
+    });
+// *********** ADMIN JOB IMAGE GALLERY ROUTES **************************************
+
+    Route::prefix('/image')->controller(ImageController::class)->name('image.')->group(function (){
+        Route::get("/{jid}","index")->name("index");
+        Route::post("/store/{jid}","store")->name("store");
+        Route::get("/destroy/{jid}/{id}","destroy")->name("destroy");
     });
 });
 
