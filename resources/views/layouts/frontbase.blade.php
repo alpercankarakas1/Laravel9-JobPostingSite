@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{asset('assets')}}/css/gijgo.css">
     <link rel="stylesheet" href="{{asset('assets')}}/css/animate.min.css">
     <link rel="stylesheet" href="{{asset('assets')}}/css/slicknav.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="{{asset('assets')}}/css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
