@@ -39,7 +39,7 @@ Route::get('/param/{id}/{number}', [HomeController::class,'param'])->name('param
 // Route with post
 Route::post('/save', [HomeController::class,'save'])->name('save');
 
-Route::get('/job/{id}/', [HomeController::class,'job'])->name('job');
+Route::get('/job/{id}', [HomeController::class,'job'])->name('job');
 
 
 

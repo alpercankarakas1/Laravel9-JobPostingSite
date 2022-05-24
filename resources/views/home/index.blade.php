@@ -32,7 +32,7 @@
                                     <img src="{{Storage::url($job->image)}}" style="height: 50px;width: 50px">
                                 </div>
                                 <div class="jobs_conetent">
-                                    <a href="job_details.html"><h4>{{$job->title}}</h4></a>
+                                    <a href="{{route('job',['id'=>$job->id])}}"><h4>{{$job->title}}</h4></a>
                                     <div class="links_locat d-flex align-items-center">
                                         <div class="location">
                                             <p> <i class="fa fa-building"></i> {{$job->company}}</p>
@@ -49,7 +49,7 @@
                             <div class="jobs_right">
                                 <div class="apply_now">
                                     <a class="heart_mark" href="#"> <i class="ti-heart"></i> </a>
-                                    <a href="job_details.html" class="boxed-btn3">Apply Now</a>
+                                    <a href="{{route('job',['id'=>$job->id])}}" class="boxed-btn3">Apply Now</a>
                                 </div>
                                 <div class="date">
                                     <p>Created at: {{date('d-m-Y',strtotime($job->created_at))}}</p>
