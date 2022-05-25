@@ -1,4 +1,4 @@
-@extends('layouts.frontbase')
+@extends('layouts.withoutsidebar')
 
 @section('title', 'Job Posting Site')
 @section('head')

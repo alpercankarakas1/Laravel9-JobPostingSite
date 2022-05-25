@@ -40,9 +40,9 @@
 
 
 <!--
- @section('sidebar')
- @include('home.sidebar')
- @show
+ section('sidebar')
+ include('home.sidebar')
+ show
 
 //-->
 
