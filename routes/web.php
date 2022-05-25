@@ -40,6 +40,7 @@ Route::get('/param/{id}/{number}', [HomeController::class,'param'])->name('param
 Route::post('/save', [HomeController::class,'save'])->name('save');
 
 Route::get('/job/{id}', [HomeController::class,'job'])->name('job');
+Route::get('/categoryjobs/{id}/{slug}', [HomeController::class,'categoryjobs'])->name('categoryjobs');
 
 
 
