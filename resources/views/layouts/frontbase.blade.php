@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>@yield("title")</title>
-    <meta name="description" content="">
+    <meta name="description" content="@yield('description')">   <!-- meta desc -->
+    <meta name="keywords" content="@yield('keywords')">         <!-- meta keywords -->
+    <meta name="author" content="Alper Can Karakas">            <!-- meta author -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="icon" type="image/x-icon" href="@yield('icon')"> <!-- icon -->
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->

@@ -30,7 +30,7 @@
             </li>
 
             <li class="mt-5">
-                <a href="/admin/category">
+                <a href="{{route('admin.category.index')}}">
                     <i class="fa fa-th"></i>
                     <span>Categories</span>
                 </a>
@@ -79,7 +79,7 @@
             </li>
 
             <li class="mt-5">
-                <a href="/admin/settings">
+                <a href="{{route('admin.setting')}}">
                     <i class="fa fa-cogs"></i>
                     <span>Settings</span>
                 </a>
