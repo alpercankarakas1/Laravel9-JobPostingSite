@@ -17,6 +17,7 @@
                     <div class="form-panel">
                         <form class="form-horizontal style-form" action="{{route('admin.setting.update')}}" method="post" enctype="multipart/form-data">
                             @csrf
+                            <input type="hidden" id="id" name="id" value="{{$data->id}}" class="form-control">
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Title</label>
                                 <div class="col-sm-10">

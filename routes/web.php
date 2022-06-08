@@ -27,8 +27,11 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-// Call Controller Function
+// ******** HOMEPAGE ROUTES *************
 Route::get('/', [HomeController::class,'index'])->name('home');
+Route::get('/about', [HomeController::class,'about'])->name('about');
+Route::get('/contact', [HomeController::class,'contact'])->name('contact');
+Route::get('/references', [HomeController::class,'references'])->name('references');
 
 // Route to Controller to View
 Route::get('/test', [HomeController::class,'test'])->name('test');
