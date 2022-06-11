@@ -18,15 +18,10 @@
                                     <ul id="navigation">
                                         <li><a href="{{route("home")}}">home</a></li>
                                         <li><a href="#">Browse Job</a></li>
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
-                                            </ul>
-                                        </li>
                                         <li><a href="{{route("about")}}">About Us</a></li>
                                         <li><a href="{{route("references")}}">References</a></li>
                                         <li><a href="{{route("contact")}}">Contact</a></li>
+                                        <li><a href="{{route("faq")}}">FAQ</a></li>
                                     </ul>
                                 </nav>
                             </div>

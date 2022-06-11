@@ -72,7 +72,7 @@
             </li>
 
             <li class="mt-5">
-                <a href="/admin/faq">
+                <a href="{{route('admin.faq.index')}}">
                     <i class="fa fa-question"></i>
                     <span>FAQ</span>
                 </a>
