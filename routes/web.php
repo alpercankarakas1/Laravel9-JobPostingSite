@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminPanel\AdminJobController;
 use App\Http\Controllers\AdminPanel\ImageController;
+use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
@@ -95,7 +96,18 @@ Route::prefix('admin')->name('admin.')->group(function (){
         Route::post("/store/{jid}","store")->name("store");
         Route::get("/destroy/{jid}/{id}","destroy")->name("destroy");
     });
+
+
+// *********** ADMIN MESSAGE ROUTES **************************************
+
+    Route::prefix('/message')->controller(MessageController::class)->name('message.')->group(function (){
+        Route::get("/","index")->name("index");
+        Route::get("/show/{id}","show")->name("show");
+        Route::post("/update/{id}","update")->name("update");
+        Route::get("/destroy/{id}","destroy")->name("destroy");
+    });
 });
+
 
 
 

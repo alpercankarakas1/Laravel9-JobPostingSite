@@ -51,7 +51,7 @@
             </li>
 
             <li class="mt-5">
-                <a href="/admin/message">
+                <a href="{{route('admin.message.index')}}">
                     <i class="fa fa-comment"></i>
                     <span>Messages</span>
                 </a>
