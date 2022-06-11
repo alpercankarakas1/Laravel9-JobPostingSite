@@ -51,8 +51,8 @@
                                 </div>
                             </div>
                             <div class="jobs_right">
-                                <div class="apply_now">
-                                    <a class="heart_mark" href="#"> <i class="ti-heart"></i> </a>
+                                <div class="apply_now " style="padding-top: 13px">
+                                    <a class="heart_mark" href="#" style="padding-top: 13px"> <i class="ti-heart"></i> </a>
                                     <a href="{{route('job',['id'=>$job->id])}}" class="boxed-btn3">Apply Now</a>
                                 </div>
                                 <div class="date">
