@@ -7,7 +7,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-3 col-lg-2">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="{{route("home")}}">
                                     <img src="{{asset("assets")}}/img/logo.png" alt="">
                                 </a>
                             </div>
@@ -16,8 +16,8 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="index.html">home</a></li>
-                                        <li><a href="jobs.html">Browse Job</a></li>
+                                        <li><a href="{{route("home")}}">home</a></li>
+                                        <li><a href="#">Browse Job</a></li>
                                         <li><a href="#">blog <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="blog.html">blog</a></li>

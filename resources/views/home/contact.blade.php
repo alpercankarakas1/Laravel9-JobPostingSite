@@ -27,8 +27,7 @@
                     <h2 class="contact-title">Get in Touch</h2>
                 </div>
                 <div class="col-lg-8">
-                    @include('home.messages')
-                    <form class="form-horizontal style-form" action="{{route("storemessage")}}" method="post" id="contactForm" novalidate="novalidate">
+                    <form class="form-horizontal style-form" action="{{route("storemessage")}}" method="post">
                         @csrf
                         <div class="form-group">
                             <div class="col-sm-10" style="padding: 6px">
@@ -50,11 +49,13 @@
                                 <input type="text" name="subject" placeholder="Subject" class="single-input">
                             </div>
                         </div>
+
                         <div class="form-group">
                             <div class="col-sm-10" style="padding: 6px;">
-                                <textarea class="single-textarea" placeholder="Message" ></textarea>
+                                <textarea class="single-textarea" placeholder="Message" name="message" id="message"></textarea>
                             </div>
                         </div>
+
                         <button class="genric-btn info" type="submit">Send Message</button>
                     </form>
                 </div>
