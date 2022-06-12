@@ -213,7 +213,10 @@
 
                 </div>
                 </div>
-                    <h3>Reviews</h3>
+                    @php
+                    $average = $data->comment->average('rate')
+                    @endphp
+                    <h3> {{$data->comment->count('id')}} Review(s) <i class="fa fa-star"></i> {{number_format($average,2)}}</h3>
                     @foreach($reviews as $rs)
                     <div class="job_location_wrap white-bg">
                         <div class="card-body">

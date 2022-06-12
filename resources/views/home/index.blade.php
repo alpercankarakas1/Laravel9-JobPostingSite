@@ -29,6 +29,9 @@
             <div class="job_lists">
                 <div class="row">
                     @foreach($homejoblisting as $job)
+                        @php
+                            $average = $job->comment->average('rate')
+                        @endphp
                     <div class="col-lg-12 col-md-12">
                         <div class="single_jobs white-bg d-flex justify-content-between">
                             <div class="jobs_left d-flex align-items-center">
@@ -46,6 +49,9 @@
                                         </div>
                                         <div class="location">
                                             <p> <i class="fa fa-clock-o"></i> {{$job->job_type}}</p>
+                                        </div>
+                                        <div class="location">
+                                            <p><i class="fa fa-star"></i> {{number_format($average,2)}}</p>
                                         </div>
                                     </div>
                                 </div>
