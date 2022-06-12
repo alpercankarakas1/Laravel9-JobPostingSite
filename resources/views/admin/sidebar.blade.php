@@ -44,7 +44,7 @@
             </li>
 
             <li class="mt-5">
-                <a href="/admin/user">
+                <a href="{{route('admin.user.index')}}">
                     <i class="fa fa-users"></i>
                     <span>Users</span>
                 </a>
