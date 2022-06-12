@@ -30,7 +30,7 @@
                             <div class="Appointment">
                                 @auth
                                 <div class="phone_num d-none d-xl-block">
-                                    <a href="#">{{Auth::user()->name}}</a>
+                                    <a href="{{route('userpanel.index')}}"><i class="fa fa-user"></i>{{Auth::user()->name}}</a>
                                 </div>
 
                                 <div class="d-none d-lg-block">
