@@ -98,4 +98,12 @@ class CommentController extends Controller
         $data->delete();
         return redirect(route('admin.comment.index'));
     }
+
+    public function reviewdestroy($id)
+    {
+        //
+        $data =Comment::find($id);
+        $data->delete();
+        return redirect(route('userpanel.reviews'));
+    }
 }
