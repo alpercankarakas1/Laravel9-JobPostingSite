@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\Job;
 use App\Models\Message;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -72,6 +74,21 @@ class HomeController extends Controller
         return redirect()->route('contact')->with('info','Your message has been sent, Thank You.');
     }
 
+    public function storecomment(Request $request)
+    {
+        #dd($request); #check
+        $data = new Comment();
+        $data->user_id = Auth::id();
+        $data->job_id = $request->input('job_id');
+        $data->subject = $request->input('subject');
+        $data->review = $request->input('review');
+        $data->rate = $request->input('rate');
+        $data->ip = request()->ip();
+        $data->save();
+
+        return redirect()->route('job',['id'=>$request->input('job_id')])->with('info', 'Your comment has been sent, Thank You.');
+    }
+
     public function references(){
 
         $setting = Setting::first();
@@ -85,9 +102,11 @@ class HomeController extends Controller
 
         $data = Job::find($id);
         $images = DB::table('images')->where('job_id',$id)->get();
+        $reviews = Comment::where('job_id',$id)->where('status','True')->get();
         return view('home.job',[
             'data' => $data,
-            'images'=>$images
+            'images'=>$images,
+            'reviews'=>$reviews
         ]);
     }
 

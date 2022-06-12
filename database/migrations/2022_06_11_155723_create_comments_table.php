@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
+            $table->id()->autoIncrement();
             $table->integer('user_id');
             $table->integer('job_id');
             $table->string('subject',100);

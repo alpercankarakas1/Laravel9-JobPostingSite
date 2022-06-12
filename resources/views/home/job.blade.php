@@ -169,8 +169,62 @@
                             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap"></script>
 
                         </div>
-                    </div>
+
+                        <div class="job_sumary">
+                                <h3 style="padding-left: 15px;padding-top: 25px">Write your review</h3>
+                            <hr>
+
+                                <form action="{{route('storecomment')}}" style="padding-left: 15px;padding-right: 15px;padding-bottom: 15px" method="post">
+                                    @csrf
+                                    <input class="input" type="hidden" name="job_id" value="{{$data->id}}">
+
+                                    <div class="form-group">
+                                        <div class="mt-10" >
+                                            <input type="text" name="subject" placeholder="Subject" class="single-input">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="mt-10" >
+                                            <textarea name="review" class="single-textarea" placeholder="Review"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-rating">
+                                            <strong class="text-uppercase">Your Rating: </strong>
+
+                                            <input type="radio" id="star1" name="rate" value="1" />₁<label for="star1"></label>
+                                            <input type="radio" id="star2" name="rate" value="2" />₂<label for="star2"></label>
+                                            <input type="radio" id="star3" name="rate" value="3" />₃<label for="star3"></label>
+                                            <input type="radio" id="star4" name="rate" value="4" />₄<label for="star4"></label>
+                                            <input type="radio" id="star5" name="rate" value="5" />₅<label for="star5"></label>
+                                            <h1></h1>
+
+                                        </div>
+                                    </div>
+                                    @auth
+                                    <button class="genric-btn info radius" type="submit">Submit</button>
+                                    @else
+                                        <a href="/login" class="genric-btn info radius"> For submit your review, please login.</a>
+                                    @endauth
+                                </form>
+
+
                 </div>
+                </div>
+                    <h3>Reviews</h3>
+                    @foreach($reviews as $rs)
+                    <div class="job_location_wrap white-bg">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$rs->user->name}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{$rs->created_at}}</h6>
+                            <strong>{{$rs->subject}}</strong>
+                            <p class="card-text">{{$rs->review}}</p>
+                            <p style="">{{$rs->rate}} <i class="fa fa-star"></i></p>
+                        </div>
+                    </div>
+                    @endforeach
             </div>
         </div>
     </div>
