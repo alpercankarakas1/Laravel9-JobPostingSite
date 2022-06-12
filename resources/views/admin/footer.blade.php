@@ -23,6 +23,11 @@
 <!--common script for all pages-->
 <script src="{{asset('assets')}}/admin/js/common-scripts.js"></script>
 
+
+<script type="text/javascript" src="{{asset('assets')}}/admin/js/jquery.backstretch.min.js"></script>
+<script>
+    $.backstretch("{{asset('assets')}}/admin/img/login-bg.jpg", {speed: 500});
+</script>
 <!--script for this page-->
 
 <script>
