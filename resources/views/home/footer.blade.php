@@ -11,29 +11,24 @@
                             </a>
                         </div>
                         <p>
-                            finloan@support.com <br>
-                            +10 873 672 6782 <br>
-                            600/D, Green road, NewYork
+                            jobpostingsite@post.com <br>
+                            +51251241231 <br>
+                            Karabuk, Turkiye
                         </p>
                         <div class="socail_links">
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="www.jpsfacebook.com">
                                         <i class="ti-facebook"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
+                                    <a href="www.jpstwitter.com">
                                         <i class="fa fa-twitter"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="www.jpsinstagram.com">
                                         <i class="fa fa-instagram"></i>
                                     </a>
                                 </li>
@@ -48,9 +43,8 @@
                             Company
                         </h3>
                         <ul>
-                            <li><a href="#">About </a></li>
-                            <li><a href="#"> Pricing</a></li>
-                            <li><a href="#">Carrier Tips</a></li>
+                            <li><a href="{{route("about")}}">About Us</a></li>
+                            <li><a href="{{route("references")}}">References</a></li>
                             <li><a href="{{route("faq")}}">FAQ</a></li>
                         </ul>
 
@@ -62,10 +56,12 @@
                             Category
                         </h3>
                         <ul>
-                            <li><a href="#">Design & Art</a></li>
-                            <li><a href="#">Engineering</a></li>
-                            <li><a href="#">Sales & Marketing</a></li>
-                            <li><a href="#">Finance</a></li>
+
+                            <li><a href="">Design & Art</a></li>
+                            <li><a href="">Information Technology</a></li>
+                            <li><a href="">Finance</a></li>
+                            <li><a href="">Architecture</a></li>
+
                         </ul>
                     </div>
                 </div>

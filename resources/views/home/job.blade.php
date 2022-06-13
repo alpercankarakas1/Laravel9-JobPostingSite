@@ -1,6 +1,12 @@
 @extends('layouts.withoutsidebar')
 
 @section('title', 'Job Posting Site')
+@section('description', $setting->description)
+@section('keywords', $setting->keywords)
+@section('icon', Storage::url($setting->icon))
+@php
+    $mainCategories = \App\Http\Controllers\HomeController::maincategorylist()
+@endphp
 @section('head')
     <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 @endsection
@@ -43,9 +49,6 @@
                                 </div>
                             </div>
                             <div class="jobs_right">
-                                <div class="apply_now">
-                                    <a class="heart_mark" href="#"> <i class="ti-heart"></i> </a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -61,61 +64,63 @@
                     </div>
                     <div class="apply_job_form white-bg">
                         <h4>Apply for the job</h4>
-                        <form action="#">
+                        <form action="{{route('storeapplication')}}" method="post">
+                            @csrf
+                            <input class="input" type="hidden" name="job_id" value="{{$data->id}}">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div style="padding-top: 10px" class="col-md-2">
                                     <div class="input_field">
-                                        <input type="text" placeholder="Your name">
+                                        <h5>Your name</h5>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-10">
                                     <div class="input_field">
-                                        <input type="text" placeholder="Email">
+                                        @auth
+                                        <input type="text" placeholder="" name="name" value="{{Auth::user()->name}}">
+                                        @endauth
+                                        @guest
+                                        <input type="text" placeholder="" name="name" value="">
+                                        @endguest
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div style="padding-top: 10px" class="col-md-2">
                                     <div class="input_field">
-                                        <input type="text" placeholder="Website/Portfolio link">
+                                        <h5>Email</h5>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <button type="button" id="inputGroupFileAddon03"><i class="fa fa-cloud-upload" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03">
-                                            <label class="custom-file" for="inputGroupFile03">Upload CV</label>
-                                        </div>
+                                <div class="col-md-10">
+                                    <div class="input_field">
+                                        <input type="text" name="email" placeholder="">
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div style="padding-top: 10px" class="col-md-2">
                                     <div class="input_field">
-                                        <textarea name="coverletter" id="coverletter" cols="30" rows="10" placeholder="Coverletter">
+                                        <h5>Upload CV</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="input_field">
+                                        <input style="padding-top: 15px" type="file" name="usercv" placeholder="Upload CV">
+                                    </div>
+                                </div>
 
-                                        </textarea>
-                                        <script>
-                                            ClassicEditor
-                                                .create( document.querySelector( '#coverletter' ) )
-                                                .then( editor => {
-                                                    console.log( editor );
-                                                } )
-                                                .catch( error => {
-                                                    console.error( error );
-                                                } );
-                                        </script>
-                                    </div>
-                                </div>
                                 <div class="col-md-12">
+                                    @auth
                                     <div class="submit_btn">
                                         <button class="boxed-btn3 w-100" type="submit">Apply Now</button>
                                     </div>
+                                    @endauth
+                                    @guest
+                                        <div class="submit_btn">
+                                            <a href="/loginuser" class="boxed-btn2 w-100">You need to login to apply for a job.</a>
+                                        </div>
+                                    @endguest
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
+
                 <div class="col-lg-4">
                     <div class="job_sumary">
                         <div class="summery_header">
@@ -135,10 +140,9 @@
                     <div class="share_wrap d-flex">
                         <span>Share at:</span>
                         <ul>
-                            <li><a href="#"> <i class="fa fa-facebook"></i></a> </li>
-                            <li><a href="#"> <i class="fa fa-google-plus"></i></a> </li>
-                            <li><a href="#"> <i class="fa fa-twitter"></i></a> </li>
-                            <li><a href="#"> <i class="fa fa-envelope"></i></a> </li>
+                            <li><a href="{{$setting->facebook}}"> <i class="fa fa-facebook"></i></a> </li>
+                            <li><a href="{{$setting->twitter}}"> <i class="fa fa-twitter"></i></a> </li>
+                            <li><a href="{{$setting->instagram}}"> <i class="fa fa-instagram"></i></a> </li>
                         </ul>
                     </div>
                     <div class="job_location_wrap">

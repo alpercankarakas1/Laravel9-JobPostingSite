@@ -4,11 +4,17 @@
 @section('description', $setting->description)
 @section('keywords', $setting->keywords)
 @section('icon', Storage::url($setting->icon))
-
+@php
+    $mainCategories = \App\Http\Controllers\HomeController::maincategorylist()
+@endphp
 
 @section("slider")
     @include("home.slider")
 @endsection
+
+@php
+    $mainCategories = \App\Http\Controllers\HomeController::maincategorylist()
+@endphp
 
 @section('content')
     <!-- job_listing_area_start  -->
@@ -22,7 +28,6 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="brouse_job text-right">
-                        <a href="jobs.html" class="boxed-btn4">Browse More Job</a>
                     </div>
                 </div>
             </div>
@@ -58,7 +63,6 @@
                             </div>
                             <div class="jobs_right">
                                 <div class="apply_now " style="padding-top: 13px">
-                                    <a class="heart_mark" href="#" style="padding-top: 13px"> <i class="ti-heart"></i> </a>
                                     <a href="{{route('job',['id'=>$job->id])}}" class="boxed-btn3">Apply Now</a>
                                 </div>
                                 <div class="date">
@@ -75,82 +79,6 @@
     <!-- job_listing_area_end  -->
 
 
-    <div class="top_companies_area">
-        <div class="container">
-            <div class="row align-items-center mb-40">
-                <div class="col-lg-6 col-md-6">
-                    <div class="section_title">
-                        <h3>Top Companies</h3>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="brouse_job text-right">
-                        <a href="jobs.html" class="boxed-btn4">Browse More Job</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-xl-3 col-md-6">
-                    <div class="single_company">
-                        <div class="thumb">
-                            <img src="{{asset("assets")}}/img/svg_icon/5.svg" alt="">
-                        </div>
-                        <a href="jobs.html"><h3>Snack Studio</h3></a>
-                        <p> <span>50</span> Available position</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xl-3 col-md-6">
-                    <div class="single_company">
-                        <div class="thumb">
-                            <img src="{{asset("assets")}}/img/svg_icon/4.svg" alt="">
-                        </div>
-                        <a href="jobs.html"><h3>Snack Studio</h3></a>
-                        <p> <span>50</span> Available position</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xl-3 col-md-6">
-                    <div class="single_company">
-                        <div class="thumb">
-                            <img src="{{asset("assets")}}/img/svg_icon/3.svg" alt="">
-                        </div>
-                        <a href="jobs.html"><h3>Snack Studio</h3></a>
-                        <p> <span>50</span> Available position</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xl-3 col-md-6">
-                    <div class="single_company">
-                        <div class="thumb">
-                            <img src="{{asset("assets")}}/img/svg_icon/1.svg" alt="">
-                        </div>
-                        <a href="jobs.html"><h3>Snack Studio</h3></a>
-                        <p> <span>50</span> Available position</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- job_searcing_wrap  -->
-    <div class="job_searcing_wrap overlay">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 offset-lg-1 col-md-6">
-                    <div class="searching_text">
-                        <h3>Looking for a Job?</h3>
-                        <p>We provide online instant cash loans with quick approval </p>
-                        <a href="#" class="boxed-btn3">Browse Job</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 offset-lg-1 col-md-6">
-                    <div class="searching_text">
-                        <h3>Looking for a Expert?</h3>
-                        <p>We provide online instant cash loans with quick approval </p>
-                        <a href="#" class="boxed-btn3">Post a Job</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- job_searcing_wrap end  -->
 
 @endsection

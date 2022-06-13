@@ -17,7 +17,6 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a href="{{route("home")}}">home</a></li>
-                                        <li><a href="#">Browse Job</a></li>
                                         <li><a href="{{route("about")}}">About Us</a></li>
                                         <li><a href="{{route("references")}}">References</a></li>
                                         <li><a href="{{route("contact")}}">Contact</a></li>

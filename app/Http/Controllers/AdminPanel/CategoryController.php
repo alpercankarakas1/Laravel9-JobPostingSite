@@ -48,7 +48,7 @@ class CategoryController extends Controller
      *@param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request,$jid)
+    public function create(Request $request)
     {
         //
         $data = Category::all();

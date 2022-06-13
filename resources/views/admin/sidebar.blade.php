@@ -17,16 +17,11 @@
                 </a>
             </li>
 
-            <li class="sub-menu">
-                <a href="javascript:;" >
+            <li class="mt-5">
+                <a href="{{route('admin.application.index')}}">
                     <i class="fa fa-clipboard"></i>
-                    <span>Application</span>
+                    <span>Applications</span>
                 </a>
-                <ul class="sub">
-                    <li><a  href="general.html">General</a></li>
-                    <li><a  href="buttons.html">Buttons</a></li>
-                    <li><a  href="panels.html">Panels</a></li>
-                </ul>
             </li>
 
             <li class="mt-5">
@@ -61,13 +56,6 @@
                 <a href="/admin/comment">
                     <i class="fa fa-comments"></i>
                     <span>Comments</span>
-                </a>
-            </li>
-
-            <li class="mt-5">
-                <a href="/admin/social">
-                    <i class="fa fa-tag"></i>
-                    <span>Social</span>
                 </a>
             </li>
 

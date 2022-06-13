@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminPanel\AdminJobController;
 use App\Http\Controllers\AdminPanel\AdminUserController;
+use App\Http\Controllers\AdminPanel\ApplicationController;
 use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
@@ -45,6 +46,7 @@ Route::view('/registeruser','home.register')->name('registeruser');
 Route::get('/logoutuser',[HomeController::class,'logout'])->name('logoutuser');
 Route::view('/loginadmin','admin.login')->name('loginadmin');
 Route::post('/loginadmincheck',[HomeController::class,'loginadmincheck'])->name('loginadmincheck');
+Route::post('/storeapplication', [HomeController::class,'storeapplication'])->name('storeapplication');
 
 // Route to Controller to View
 Route::get('/test', [HomeController::class,'test'])->name('test');
@@ -150,6 +152,17 @@ Route::middleware('auth')->group(function () {
             Route::get("/destroy/{id}", "destroy")->name("destroy");
             Route::post("/addrole/{id}", "addrole")->name("addrole");
             Route::get("/destroyrole/{uid}/{rid}", "destroyrole")->name("destroyrole");
+        });
+
+        // *********** ADMIN APPLICATION ROUTES **************************************
+
+        Route::prefix('/application')->controller(ApplicationController::class)->name('application.')->group(function () {
+            Route::get("/", "index")->name("index");
+            Route::get("/edit/{id}", "edit")->name("edit");
+            Route::get("/show/{id}", "show")->name("show");
+            Route::post("/update/{id}", "update")->name("update");
+            Route::get("/destroy/{id}", "destroy")->name("destroy");
+
         });
 
         // ******** ADMIN FAQ ROUTES *************

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Application;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Faq;
@@ -21,8 +22,8 @@ class HomeController extends Controller
     //
     public function index(){
 
-        $sliderdata = Job::limit(4)->get();
-        $homejoblisting = Job::limit(6)->get();
+        $sliderdata = Job::limit(10)->get();
+        $homejoblisting = Job::limit(10)->get();
         $setting = Setting::first();
 
         return view('home.index',[
@@ -38,6 +39,15 @@ class HomeController extends Controller
 
         return view('home.about',[
             'setting' => $setting
+        ]);
+    }
+
+    public function slider(){
+
+        $data = Job::all();
+
+        return view('home.slider',[
+            'data' => $data
         ]);
     }
 
@@ -89,6 +99,22 @@ class HomeController extends Controller
         return redirect()->route('job',['id'=>$request->input('job_id')])->with('info', 'Your comment has been sent, Thank You.');
     }
 
+    public function storeapplication(Request $request)
+    {
+        #dd($request); #check
+        $data = new Application();
+        $data->user_id = Auth::id();
+        $data->job_id = $request->input('job_id');
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->note = $request->input('note');
+        $data->ip = request()->ip();
+        $data->status = $request->input('status');
+        $data->save();
+
+        return redirect()->route('job',['id'=>$request->input('job_id')])->with('info', 'Your comment has been sent, Thank You.');
+    }
+
     public function references(){
 
         $setting = Setting::first();
@@ -103,10 +129,13 @@ class HomeController extends Controller
         $data = Job::find($id);
         $images = DB::table('images')->where('job_id',$id)->get();
         $reviews = Comment::where('job_id',$id)->where('status','True')->get();
+        $setting = Setting::first();
+
         return view('home.job',[
             'data' => $data,
             'images'=>$images,
-            'reviews'=>$reviews
+            'reviews'=>$reviews,
+            'setting' =>$setting
         ]);
     }
 
